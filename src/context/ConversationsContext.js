@@ -33,6 +33,7 @@ export const ConversationsProvider = props => {
             console.log(res.data.messages)
             for (var i = 0; i < res.data.messages.length; i++) {
                 dispatch({type: "ADD_NEW_MESSAGE", payload: res.data.messages[i]})
+                console.log(res.data.messages[i])
             }
             // res.data.messages.forEach(message => {
                 
