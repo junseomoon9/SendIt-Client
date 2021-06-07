@@ -18,7 +18,7 @@ export const ConversationsProvider = props => {
 
     function retrieveConversations(user) {
         
-        axios.post("http://localhost:3001/chat/retrieveConversations", {currentUserId: user._id})
+        axios.post("https://evening-reaches-01572.herokuapp.com/chat/retrieveConversations", {currentUserId: user._id})
         .then(res => {
             
             dispatch({type: "RETRIEVE_EXISTING_CONVERSATIONS", payload: res.data.conversations})
@@ -28,7 +28,7 @@ export const ConversationsProvider = props => {
     }
 
     function retrieveMessages() {
-        axios.post("http://localhost:3001/chat/retrieveMessages")
+        axios.post("https://evening-reaches-01572.herokuapp.com/chat/retrieveMessages")
         .then(res => {
             console.log(res.data.messages)
             for (var i = 0; i < res.data.messages.length; i++) {

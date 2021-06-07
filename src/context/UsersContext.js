@@ -2,7 +2,7 @@ import React, {createContext, useReducer, useEffect} from 'react'
 import AppReducer from './AppReducer'
 const initialState = {
     currentUser: {},
-    users: localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
+    users: []
 }
 
 export const UsersContext = createContext(initialState);

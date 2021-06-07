@@ -30,7 +30,7 @@ const NewConversation = ({socketRef, newConvoBtnClicked, handleNewConvoBtn}) => 
     const handleNewConversation = (e) => {
         e.preventDefault()
         
-       axios.post("https://evening-reaches-01572.herokuapp.com//chat/newconversation", {recipientUsername: recipientUsername, currentUserEmail: currentUser.email, currentUserId: currentUser._id})
+       axios.post("https://evening-reaches-01572.herokuapp.com/chat/newconversation", {recipientUsername: recipientUsername, currentUserEmail: currentUser.email, currentUserId: currentUser._id})
        .then(res => {
            
            setCurrentChatroom(res.data.room_id)
