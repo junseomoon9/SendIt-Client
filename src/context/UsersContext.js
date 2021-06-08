@@ -11,10 +11,6 @@ export const UsersProvider = props => {
 
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    useEffect(() => {
-        localStorage.setItem('users', JSON.stringify(state.users))
-    }, [state])
-
     // actions
     const signupNewUser = user => {
         dispatch({type: "SIGNUP_NEW_USER", payload: user})

@@ -30,14 +30,11 @@ export const ConversationsProvider = props => {
     function retrieveMessages() {
         axios.post("https://evening-reaches-01572.herokuapp.com/chat/retrieveMessages")
         .then(res => {
-            console.log(res.data.messages)
+            
             for (var i = 0; i < res.data.messages.length; i++) {
                 dispatch({type: "ADD_NEW_MESSAGE", payload: res.data.messages[i]})
-                console.log(res.data.messages[i])
-            }
-            // res.data.messages.forEach(message => {
                 
-            // })
+            }
             
         }).catch(err => {
             console.log(err.response)
@@ -57,7 +54,7 @@ export const ConversationsProvider = props => {
         dispatch({type: "SET_CURRENT_CHATROOM", payload: room_id})
     }
     function deleteMessage(message) {
-        console.log(message)
+      
         dispatch({type: "DELETE_MESSAGE", payload: message})
     }
 

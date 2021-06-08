@@ -14,7 +14,7 @@ const NewConversation = ({socketRef, newConvoBtnClicked, handleNewConvoBtn}) => 
 
     useEffect(() => {
         socketRef.current.on('create-room', (data) => {
-            console.log(data)
+           
             if (data.recipientId === currentUser._id) {
                 const conversation = {room_id: data.room_id, users: [data.initiatorId, data.recipientId], messages: []}
                 createNewConversation(conversation)
