@@ -13,6 +13,7 @@ const Message = ({message, handleDeleteMessage}) => {
     useEffect(() => {
         var currentTime = Date.now();
         currentTime = new Date(currentTime)
+        currentTime.setSeconds(currentTime.getSeconds() + 13)
         var created_at = new Date(message.created_at)
         
 
@@ -82,8 +83,11 @@ const Message = ({message, handleDeleteMessage}) => {
 
                     
                     } else if (currentTime_min === created_at_min) {
+                        
                         const created_at_sec = created_at.getSeconds();
                         const currentTime_sec = currentTime.getSeconds()
+                        console.log(created_at_sec)
+                        console.log(currentTime_sec)
 
                         const diffSec = currentTime_sec - created_at_sec;
                         string = `${diffSec}s ago`
@@ -101,7 +105,7 @@ const Message = ({message, handleDeleteMessage}) => {
         
         setTimePassed(string)
         
-    }, )
+    })
 
     
     

@@ -43,9 +43,10 @@ const Login = () => {
             setCurrentUser(user)
             socketRef.current = socketClient("https://evening-reaches-01572.herokuapp.com/");
             retrieveConversations(user)
-            retrieveMessages()
+           
             setResponseMessage("Successfully Logged In")
             setTimeout(() => {
+                retrieveMessages()
                 setSuccessfulLogin(true)
             }, 2500)
             
