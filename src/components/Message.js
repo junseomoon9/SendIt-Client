@@ -13,7 +13,7 @@ const Message = ({message, handleDeleteMessage}) => {
     useEffect(() => {
         var currentTime = Date.now();
         currentTime = new Date(currentTime)
-        currentTime.setSeconds(currentTime.getSeconds() )
+        currentTime.setSeconds(currentTime.getSeconds() +4)
         var created_at = new Date(message.created_at)
         
 
